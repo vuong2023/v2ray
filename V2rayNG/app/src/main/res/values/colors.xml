@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPing">#009966</color>
     <color name="colorPingRed">#FF0099</color>
-    <color name="color_fab_orange">#f97910</color>
+    <color name="color_fab_orange">#4B0082</color>
 
     <color name="color_switch_fab_grey">#CDCDCD</color>
     <color name="color_fab_grey">#9C9C9C</color>
@@ -13,6 +13,6 @@
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#000000</color>
-    <color name="colorBg">#FFFFFF</color>
+    <color name="colorBg">#00FFFFFF</color>
     <color name="colorText">#000000</color>
 </resources>
