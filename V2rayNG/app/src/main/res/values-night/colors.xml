@@ -7,7 +7,7 @@
     <color name="colorUnselected">#222222</color>
 
     <color name="colorPrimary">#222222</color>
-    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryDark">#00FFFFFF</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="colorBg">#00FFFFFF</color>
     <color name="colorText">#FFFFFF</color>
