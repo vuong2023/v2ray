@@ -4,10 +4,10 @@
     <color name="colorPingRed">#FF0099</color>
     <color name="color_fab_orange">#4B0082</color>
 
-    <color name="color_switch_fab_grey">#CDCDCD</color>
+    <color name="color_switch_fab_grey">#00FFFFFF</color>
     <color name="color_fab_grey">#00FFFFFF</color>
     <color name="color_secondary">#727272</color>
-    <color name="colorSelected">#000000</color>
+    <color name="colorSelected">#00FFFFFF</color>
     <color name="colorUnselected">#FFFFFF</color>
 
     <color name="colorPrimary">#00FFFFFF</color>
