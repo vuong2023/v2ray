@@ -680,7 +680,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 startActivity(Intent(this, UserAssetActivity::class.java))
             }
             R.id.feedback -> {
-                Utils.openUri(this, http://www.facebook.com/hoangbay07)
+                Utils.openUri(this, AppConfig.v2rayNGIssues)
             }
 //            R.id.promotion -> {
 //                Utils.openUri(this, "${Utils.decode(AppConfig.promotionUrl)}?t=${System.currentTimeMillis()}")
