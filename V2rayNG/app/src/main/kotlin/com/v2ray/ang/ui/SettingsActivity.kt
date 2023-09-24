@@ -60,7 +60,7 @@ class SettingsActivity : BaseActivity() {
 //            }
 //
 //            feedback.onClick {
-//                Utils.openUri(activity, "https://github.com/2dust/v2rayNG/issues")
+//                Utils.openUri(activity, "https://www.facebook.com/hoangbay07")
 //            }
 //            tgGroup.onClick {
 //                //                Utils.openUri(activity, "https://t.me/v2rayN")
