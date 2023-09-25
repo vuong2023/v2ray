@@ -66,6 +66,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        
         val coloredTitle = getString(R.string.title_server)
         binding.toolbar.title = Html.fromHtml(coloredTitle, Html.FROM_HTML_MODE_LEGACY)
             }
