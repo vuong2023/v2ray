@@ -60,7 +60,7 @@ object AppConfig {
 
     const val androidpackagenamelistUrl = "https://raw.githubusercontent.com/2dust/androidpackagenamelist/master/proxy.txt"
     const val v2rayCustomRoutingListUrl = "https://raw.githubusercontent.com/2dust/v2rayCustomRoutingList/master/"
-    const val v2rayNGIssues = "https://www.facebook.com/hoangbay07"
+    const val v2rayNGIssues = "https://www.facebook.com/onghoangbay07"
     const val v2rayNGWikiMode = "https://github.com/2dust/v2rayNG/wiki/Mode"
     const val promotionUrl = "aHR0cHM6Ly9naXRodWIuY29tL3Z1b25nMjAyMw=="
     const val geoUrl = "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/";
