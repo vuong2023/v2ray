@@ -69,9 +69,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         
         val coloredTitle = getString(R.string.title_server)
         binding.toolbar.title = Html.fromHtml(coloredTitle, Html.FROM_HTML_MODE_LEGACY)
-            }
+        
         }
-
         binding.fab.setOnClickListener {
             if (mainViewModel.isRunning.value == true) {
                 Utils.stopVService(this)
