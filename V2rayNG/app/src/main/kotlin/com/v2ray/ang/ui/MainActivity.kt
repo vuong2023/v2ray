@@ -10,6 +10,8 @@ import android.view.MenuItem
 import com.tbruyelle.rxpermissions.RxPermissions
 import com.v2ray.ang.R
 import android.os.Bundle
+import android.text.Html
+import android.text.Spanned
 import android.text.TextUtils
 import android.view.KeyEvent
 import com.v2ray.ang.AppConfig
@@ -64,11 +66,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        title = getString(R.string.title_server)
-        setSupportActionBar(binding.toolbar)
-        if (!Utils.getDarkModeStatus(this)) {
-            WindowCompat.getInsetsController(window, window.decorView).apply {
-                isAppearanceLightStatusBars = true
+        val coloredTitle = getString(R.string.title_server)
+        binding.toolbar.title = Html.fromHtml(coloredTitle, Html.FROM_HTML_MODE_LEGACY)
             }
         }
 
