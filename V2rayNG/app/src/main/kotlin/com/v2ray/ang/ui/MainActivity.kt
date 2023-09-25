@@ -9,7 +9,6 @@ import android.view.Menu
 import android.view.MenuItem
 import com.tbruyelle.rxpermissions.RxPermissions
 import com.v2ray.ang.R
-import com.v2ray.ang.utils
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.KeyEvent
