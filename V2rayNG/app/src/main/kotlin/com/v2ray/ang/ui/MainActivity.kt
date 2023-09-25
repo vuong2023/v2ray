@@ -9,9 +9,8 @@ import android.view.Menu
 import android.view.MenuItem
 import com.tbruyelle.rxpermissions.RxPermissions
 import com.v2ray.ang.R
+import com.v2ray.ang.utils.Utils
 import android.os.Bundle
-import android.text.Html
-import android.text.Spanned
 import android.text.TextUtils
 import android.view.KeyEvent
 import com.v2ray.ang.AppConfig
@@ -27,6 +26,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import com.tencent.mmkv.MMKV
@@ -66,11 +67,15 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        
-        val coloredTitle = getString(R.string.title_server)
-        binding.toolbar.title = Html.fromHtml(coloredTitle, Html.FROM_HTML_MODE_LEGACY)
-        
+        val titleServer = getString(R.string.title_server)
+        binding.toolbar.title = HtmlCompat.fromHtml(titleServer, HtmlCompat.FROM_HTML_MODE_LEGACY)
+        setSupportActionBar(binding.toolbar)
+        if (!Utils.getDarkModeStatus(this)) {
+            WindowCompat.getInsetsController(window, window.decorView).apply {
+                isAppearanceLightStatusBars = true
+            }
         }
+
         binding.fab.setOnClickListener {
             if (mainViewModel.isRunning.value == true) {
                 Utils.stopVService(this)
