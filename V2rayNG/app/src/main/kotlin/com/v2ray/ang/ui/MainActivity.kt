@@ -22,6 +22,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.ItemTouchHelper
 import android.util.Log
 import android.widget.Toast
+import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -68,6 +69,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         setContentView(view)
         val titleServer = getString(R.string.title_server)
         binding.toolbar.title = HtmlCompat.fromHtml(titleServer, HtmlCompat.FROM_HTML_MODE_LEGACY)
+        val imageView = findViewById<ImageView>(R.id.imageView)
         setSupportActionBar(binding.toolbar)
         if (!Utils.getDarkModeStatus(this)) {
             WindowCompat.getInsetsController(window, window.decorView).apply {
