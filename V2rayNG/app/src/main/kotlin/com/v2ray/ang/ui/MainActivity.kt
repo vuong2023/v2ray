@@ -22,7 +22,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.ItemTouchHelper
 import android.util.Log
 import android.widget.Toast
-import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -676,9 +675,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.sub_setting -> {
                 startActivity(Intent(this, SubSettingActivity::class.java))
             }
-            R.id.imageView -> {
-                val imageView = findViewById<ImageView>(R.id.imageView)
-            }   
             R.id.settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java)
                         .putExtra("isRunning", mainViewModel.isRunning.value == true))
