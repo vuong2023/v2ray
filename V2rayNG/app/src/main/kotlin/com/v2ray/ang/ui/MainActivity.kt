@@ -7,6 +7,9 @@ import android.net.VpnService
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.ui.AppBarConfiguration
 import com.tbruyelle.rxpermissions.RxPermissions
 import com.v2ray.ang.R
 import android.os.Bundle
@@ -69,7 +72,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         setContentView(view)
         val titleServer = getString(R.string.title_server)
         binding.toolbar.title = HtmlCompat.fromHtml(titleServer, HtmlCompat.FROM_HTML_MODE_LEGACY)
-        val imageView = findViewById<ImageView>(R.id.imageView)
         setSupportActionBar(binding.toolbar)
         if (!Utils.getDarkModeStatus(this)) {
             WindowCompat.getInsetsController(window, window.decorView).apply {
@@ -669,7 +671,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             onBackPressedDispatcher.onBackPressed()
         }
     }
-
+    val navigationView: NavigationView = findViewById(R.id.navigationView)
+    val headerView: View = navigationView.getHeaderView(0)
+    val imageView: ImageView = headerView.findViewById(R.id.imageView)
+    
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
