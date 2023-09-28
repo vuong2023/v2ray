@@ -53,7 +53,8 @@ import java.io.FileOutputStream
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var imageView: ImageView
+    private val mainViewModel: MainViewModel by viewModels()
     private val adapter by lazy { MainRecyclerAdapter(this) }
     private val mainStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_MAIN, MMKV.MULTI_PROCESS_MODE) }
     private val settingsStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_SETTING, MMKV.MULTI_PROCESS_MODE) }
@@ -68,13 +69,17 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
+
+        imageView = binding.imageView
+        imageView.setImageResource(R.drawable.ohb_vuong)
+
+        setSupportActionBar(binding.toolbar)
         val titleServer = getString(R.string.title_server)
         binding.toolbar.title = HtmlCompat.fromHtml(titleServer, HtmlCompat.FROM_HTML_MODE_LEGACY)
-        setSupportActionBar(binding.toolbar)
+
         if (!Utils.getDarkModeStatus(this)) {
-            WindowCompat.getInsetsController(window, window.decorView).apply {
+            WindowCompat.getInsetsController(window, window.decorView)?.apply {
                 isAppearanceLightStatusBars = true
             }
         }
@@ -662,7 +667,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
-    @Deprecated("Deprecated in Java")
+    @Deprecated("Deprecated in Java")    
     override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -671,9 +676,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             onBackPressedDispatcher.onBackPressed()
         }
     }
-    val navigationView: NavigationView = findViewById(R.id.navigationView)
-    val headerView: View = navigationView.getHeaderView(0)
-    val imageView: ImageView = headerView.findViewById(R.id.imageView)
     
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
