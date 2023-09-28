@@ -54,7 +54,7 @@ import java.io.FileOutputStream
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var imageView: ImageView
-    private val mainViewModel: MainViewModel by viewModels()
+    
     private val adapter by lazy { MainRecyclerAdapter(this) }
     private val mainStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_MAIN, MMKV.MULTI_PROCESS_MODE) }
     private val settingsStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_SETTING, MMKV.MULTI_PROCESS_MODE) }
@@ -64,6 +64,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
     private var mItemTouchHelper: ItemTouchHelper? = null
+    val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
