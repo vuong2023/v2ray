@@ -7,11 +7,9 @@ import android.net.VpnService
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.ui.AppBarConfiguration
 import com.tbruyelle.rxpermissions.RxPermissions
 import com.v2ray.ang.R
+import com.v2ray.ang.utils.Utils
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.KeyEvent
@@ -25,7 +23,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.ItemTouchHelper
 import android.util.Log
 import android.widget.Toast
-import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -53,8 +50,7 @@ import java.io.FileOutputStream
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var imageView: ImageView
-    
+
     private val adapter by lazy { MainRecyclerAdapter(this) }
     private val mainStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_MAIN, MMKV.MULTI_PROCESS_MODE) }
     private val settingsStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_SETTING, MMKV.MULTI_PROCESS_MODE) }
@@ -69,17 +65,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        imageView = binding.imageView
-        imageView.setImageResource(R.drawable.ohb_vuong)
-
-        setSupportActionBar(binding.toolbar)
+        val view = binding.root
+        setContentView(view)
         val titleServer = getString(R.string.title_server)
         binding.toolbar.title = HtmlCompat.fromHtml(titleServer, HtmlCompat.FROM_HTML_MODE_LEGACY)
-
+        setSupportActionBar(binding.toolbar)
         if (!Utils.getDarkModeStatus(this)) {
-            WindowCompat.getInsetsController(window, window.decorView)?.apply {
+            WindowCompat.getInsetsController(window, window.decorView).apply {
                 isAppearanceLightStatusBars = true
             }
         }
@@ -667,7 +659,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
-    @Deprecated("Deprecated in Java")    
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -676,7 +668,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             onBackPressedDispatcher.onBackPressed()
         }
     }
-    
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
