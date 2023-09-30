@@ -9,7 +9,6 @@ import android.view.Menu
 import android.view.MenuItem
 import com.tbruyelle.rxpermissions.RxPermissions
 import com.v2ray.ang.R
-import com.v2ray.ang.utils.Utils
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.KeyEvent
@@ -23,6 +22,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.ItemTouchHelper
 import android.util.Log
 import android.widget.Toast
+import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -70,6 +70,15 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         val titleServer = getString(R.string.title_server)
         binding.toolbar.title = HtmlCompat.fromHtml(titleServer, HtmlCompat.FROM_HTML_MODE_LEGACY)
         setSupportActionBar(binding.toolbar)
+
+        // Add this code to reference the ImageView
+        val navigationView: NavigationView = findViewById(R.id.nav_view) // replace 'nav_view' with your actual NavigationView id
+        val headerView = navigationView.getHeaderView(0)
+        val imageView: ImageView = headerView.findViewById(R.id.imageView) // replace 'imageView' with your actual ImageView id
+        // Now you can manipulate your ImageView as you want
+        // For example, to set a new image resource you can use:
+        // imageView.setImageResource(R.drawable.new_image)
+        
         if (!Utils.getDarkModeStatus(this)) {
             WindowCompat.getInsetsController(window, window.decorView).apply {
                 isAppearanceLightStatusBars = true
