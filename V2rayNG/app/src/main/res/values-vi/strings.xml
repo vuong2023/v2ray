@@ -15,7 +15,7 @@
     <string name="toast_services_start">Đang bắt đầu OHB...</string>
     <string name="toast_services_stop">Đã dừng OHB!</string>
     <string name="toast_services_success">Đã bắt đầu vào mạng!</string>
-    <string name="toast_services_failure">Không thể bắt đầu v2rayNG, kiểm tra lại cấu hình hoặc khởi động lại thiết bị.</string>
+    <string name="toast_services_failure">Không thể bắt đầu OHB, kiểm tra lại cấu hình hoặc khởi động lại thiết bị.</string>
 
     <!--ServerActivity-->
    <string name="title_server"><![CDATA[<font color="#3900f5">Văn Vương 07</font>]]></string>
@@ -166,7 +166,7 @@
     <string name="title_logcat">Nhật ký hoạt động</string>
     <string name="logcat_copy">Sao chép nhật ký</string>
     <string name="logcat_clear">Xoá nhật ký</string>
-    <string name="title_service_restart">Kết nối lại v2rayNG</string>
+    <string name="title_service_restart">Kết nối lại OHB</string>
     <string name="title_del_all_config">Xoá tất cả cấu hình</string>
     <string name="title_del_duplicate_config">Xoá cấu hình trùng lặp</string>
     <string name="title_del_invalid_config">Xoá cấu hình lỗi (Kiểm tra trước)</string>
@@ -184,7 +184,7 @@
     <string name="filter_config_all">Hiển thị tất cả các gói đăng ký</string>
     <string name="title_del_duplicate_config_count">Xoá %d cấu hình trùng lặp</string>
 
-    <string name="tasker_start_service">Bắt đầu v2rayNG</string>
+    <string name="tasker_start_service">Bắt đầu OHB</string>
     <string name="tasker_setting_confirm">Xác nhận</string>
 
     <string name="routing_settings_title">Cài đặt lộ trình</string>
