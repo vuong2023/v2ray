@@ -6,7 +6,7 @@
 
     <color name="color_switch_fab_grey">#00FFFFFF</color>
     <color name="color_fab_grey">#00FFFFFF</color>
-    <color name="color_secondary">#00FFFFFF</color>
+    <color name="color_secondary">#727272</color>
     <color name="colorSelected">#912CEE</color>
     <color name="colorUnselected">#EED2EE</color>
 
